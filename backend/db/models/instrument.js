@@ -8,6 +8,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Instrument.associate = function(models) {
     // associations can be defined here
+    const columnMapping = {
+      through: 'UserInstrument',
+      otherKey: 'userId',
+      foreignKey: 'instrumentId'
+    }
+    Instrument.belongsToMany(models.User, columnMapping)
   };
   return Instrument;
 };

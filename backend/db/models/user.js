@@ -53,8 +53,14 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'instrumentId',
       foreignKey: 'userId'
     }
+    const columnMapping2 = {
+      through: 'ReservationDay',
+      otherKey: 'venueId',
+      foreignKey: 'reserverId'
+    }
     User.hasMany(models.Review, {foreignKey: 'userId'});
-    User.belongsToMany(models.Instrument, columnMapping)
+    User.belongsToMany(models.Instrument, columnMapping);
+    User.belongsToMany(models.Venue, columnMapping2);
   };
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function

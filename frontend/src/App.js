@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
+import VenuesPage from './components/VenuesPage';
 import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import './index.css';
@@ -28,7 +29,8 @@ function App() {
             </Route>
           </Switch>
       )}
-        <img src={stage} alt='Concert stage' id='stageImg'/>
+      <img src={stage} alt='Concert stage' id='stageImg'/>
+      <VenuesPage />
     </>
   );
 }

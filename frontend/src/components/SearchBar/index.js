@@ -16,16 +16,18 @@ function SearchBar() {
     }
 
     return (
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <input
-                type='search'
-                value={search}
-                name='search'
-                placeholder='Search...'
-                onChange={(e) => setSearch(e.target.value)}
-            />
-            <button onClick={(e) => handleSubmit(e)} type='submit'>Search</button>
-        </form>
+        <div className='search-bar'>
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <input
+                    type='search'
+                    value={search}
+                    name='search'
+                    placeholder='Search...'
+                    onChange={(e) => setSearch(e.target.value)}
+                    />
+                <button onClick={(e) => handleSubmit(e)} type='submit'>Search</button>
+            </form>
+        </div>
     );
 }
 

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import {useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import SearchBar from '../SearchBar';
 import './Navigation.css';
 import icon from '../../images/Music.png';
 
@@ -22,6 +23,7 @@ function Navigation({ isLoaded }) {
                     <NavLink to='/login' id='homeLogin'>Log In</NavLink>
                     <NavLink to='/signup' id='homeSignup'>Sign Up</NavLink>
                     <NavLink to='/venues' id='venueLink'>Venues</NavLink>
+                    <SearchBar />
                 </div>
             </>
         );

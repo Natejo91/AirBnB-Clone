@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getVenue } from '../../store/venue';
 import './venueId.css';
 
 function VenueIdPage() {
     const { id } = useParams();
-    // const [ currentId, setCurrentId ] = useState(id);
-    // const dispatch = useDispatch();
-    // useEffect(() => {
-    //     console.log(id, '------------');
-    //     dispatch(getVenue(id))
-    // }, [dispatch, id]);
+
 
     const venue = useSelector(state => {
         return state.venue[id];
@@ -19,7 +12,6 @@ function VenueIdPage() {
 
     return (
         <>
-            <h1>HELLOOOOOOOOO</h1>
             <div className='venue-id'>
                 {console.log(venue, 'venueIdPage')}
                 <h2>{venue.title}</h2>

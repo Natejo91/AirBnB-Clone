@@ -21,8 +21,6 @@ function Navigation({ isLoaded }) {
                 <div className='loginSignup'>
                     <NavLink to='/login' id='homeLogin'>Log In</NavLink>
                     <NavLink to='/signup' id='homeSignup'>Sign Up</NavLink>
-                </div>
-                <div>
                     <NavLink to='/venues' id='venueLink'>Venues</NavLink>
                 </div>
             </>

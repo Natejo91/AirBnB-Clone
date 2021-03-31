@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 
 const LOAD = 'venue/LOAD';
+const GET_ONE = 'venue/GET';
 
 
 const load = (list) => ({
@@ -9,20 +10,31 @@ const load = (list) => ({
     list
 });
 
-const initialState = {
-    list: []
-};
+const getOneVenue = (venue) => ({
+    type: GET_ONE,
+    venue,
+})
+
+
+export const getVenue = (id) => async (dispatch) => {
+    // console.log('for getVenue thunk')
+    const response = await csrfFetch(`/api/venues/${id}`);
+    if (response.ok) {
+        const venue = await response.json();
+        dispatch(getOneVenue(venue));
+    }
+}
 
 export const getVenues = () => async (dispatch) => {
     const response = await csrfFetch('/api/venues');
-
     if (response.ok) {
         const list = await response.json();
+        // console.log(list, '****************')
         dispatch(load(list));
     }
 };
 
-const venueReducer = (state = initialState, action) => {
+const venueReducer = (state = {}, action) => {
     switch (action.type) {
         case LOAD: {
             const allVenues = {};
@@ -32,11 +44,16 @@ const venueReducer = (state = initialState, action) => {
             return {
                 ...allVenues,
                 ...state,
-                list: action.list
             }
         }
         default:
             return state;
+        case GET_ONE: {
+            return {
+                ...state,
+                [action.venue.id]: action.venue,
+            }
+        }
     }
 }
 

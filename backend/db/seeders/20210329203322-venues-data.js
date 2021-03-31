@@ -11,6 +11,24 @@ module.exports = {
           address: '1200 W Hillford Ave',
           city: 'Michigan City',
           state: 'Michigan',
+        },
+        {
+          title: 'Church',
+          description: 'loremasedfasdfasdfasdfasdfasdfasdf',
+          maxGuests: '40',
+          dailyCost: '22.00',
+          address: '10 W Hill Ave',
+          city: 'East Chicago',
+          state: 'Indiana',
+        },
+        {
+          title: 'Studio apartment',
+          description: 'wqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',
+          maxGuests: '20',
+          dailyCost: '75.00',
+          address: '1452 N Ashford Ave',
+          city: 'Oberlin',
+          state: 'Ohio',
         }
       ], {});
   },

@@ -6,6 +6,7 @@ import SignupFormPage from './components/SignupFormPage';
 import VenuesPage from './components/VenuesPage';
 import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
+import VenueIdPage from './components/VenueIdPage';
 import './index.css';
 import stage from './images/airstagehome2.jpg';
 
@@ -27,8 +28,11 @@ function App() {
             <Route path='/signup'>
               <SignupFormPage />
             </Route>
-            <Route path='/venues'>
+            <Route exact path='/venues' >
               <VenuesPage />
+            </Route>
+            <Route exact path='/venues/:id' >
+              <VenueIdPage />
             </Route>
           </Switch>
       )}

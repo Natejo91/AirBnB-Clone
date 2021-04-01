@@ -23,7 +23,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         address: '3400 W Adams Ave',
         city: 'New York',
-        state: 'New York'
+        state: 'New York',
       },
       {
         firstname: 'Fake',
@@ -33,7 +33,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         address: '5500 N Sutton Ave',
         city: 'Rochester',
-        state: 'New York'
+        state: 'New York',
       },
     ], {});
   },

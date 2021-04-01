@@ -1,11 +1,19 @@
 #venueContainer {
     position: relative;
     top: 100px;
-    background-color: white;
     z-index: 50;
     height: 100px;
     width: 100%;
     list-style-type: none;
     margin-bottom: 20px;
     padding: 20px;
+}
+
+#venue-image {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.venue-title {
+    color: white;
 }

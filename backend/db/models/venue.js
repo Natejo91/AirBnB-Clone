@@ -29,10 +29,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // bookingImgUrl: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false
-    // }
+    concertDate: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    bookingImgUrl: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    }
   }, {});
   Venue.associate = function(models) {
     // associations can be defined here

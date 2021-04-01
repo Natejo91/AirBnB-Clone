@@ -43,7 +43,7 @@ module.exports = {
         allowNull: false
       },
       // profileImgUrl: {
-      //   type: Sequelize.STRING(100),
+      //   type: Sequelize.TEXT,
       //   allowNull: false
       // },
       createdAt: {

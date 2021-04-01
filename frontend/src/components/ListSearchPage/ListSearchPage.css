@@ -5,7 +5,12 @@
     height: 300px;
     left: 32%;
     right: 50%;
-    background-color: white;
     color: black;
     z-index: 200;
+}
+
+#venue-image {
+    max-height: 400px;
+    max-width: 400px;
+    border-radius: 50%;
 }

@@ -36,10 +36,14 @@ module.exports = {
         type: Sequelize.STRING(50),
         allowNull: false
       },
-      // bookingImgUrl: {
-      //   type: Sequelize.STRING(250),
-      //   allowNull: false
-      // },
+      concertDate: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      bookingImgUrl: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

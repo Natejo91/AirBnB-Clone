@@ -27,8 +27,9 @@ function SearchIdPage() {
                     <li>{searchVenue.city}</li>
                     <li>{searchVenue.state}</li>
                 </ul>
+                <img className='venue-image' src={searchVenue.bookingImgUrl} alt='Venue'/>
+                <button onClick={(e) => handleSubmit(e)}>Book Venue</button>
             </div>
-            <button onClick={(e) => handleSubmit(e)}></button>
         </>
 
     )

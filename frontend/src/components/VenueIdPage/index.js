@@ -25,11 +25,13 @@ function VenueIdPage() {
                     <li>{venue.maxGuests}</li>
                     <li>{venue.dailyCost}</li>
                     <li>{venue.address}</li>
+                    <li>{venue.concertDate}</li>
                     <li>{venue.city}</li>
                     <li>{venue.state}</li>
                 </ul>
+                <img className='venue-image' src={venue.bookingImgUrl} alt='Venue'/>
+                <button className='booking-button' onClick={(e) => handleSubmit(e)}>Book Venue</button>
             </div>
-            <button onClick={(e) => handleSubmit(e)}></button>
         </>
 
     )

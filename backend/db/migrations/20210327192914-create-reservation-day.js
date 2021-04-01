@@ -18,10 +18,6 @@ module.exports = {
         allowNull: false,
         references: { model: 'Venues'}
       },
-      concertDate: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

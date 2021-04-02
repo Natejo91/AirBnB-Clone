@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getReservation} from '../../store/reservation';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 function ReservationsPage() {
     const dispatch = useDispatch();
@@ -19,10 +20,12 @@ function ReservationsPage() {
     return (
         <div className='reservation'>
             <ul>
-                {/* <li>Reservation</li>
-                {reservations.map(item => (
-                    <li key={item.id}>
-                        <img src={item.bookingImgUrl} alt='booking'/>
+                <li>Reservation</li>
+                {/* {reservations?.map(item => (
+                    <li key={`li-${item}`}>
+                        <NavLink to={`/venues/${item.venueId}`} key={item.venueId}>
+                            <img src={item.bookingImgUrl} alt='booking'/>
+                        </NavLink>
                     </li>
                 ))} */}
             </ul>

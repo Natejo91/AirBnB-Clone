@@ -60,3 +60,10 @@ const reservationReducer = (state = {}, action) => {
 }
 
 export default reservationReducer;
+
+// newState = Object.assign({}, state);
+// for (let i = 0; i < action.payload.length; i++) {
+//     const key = action.payload[i].id;
+//     newState[key] = action.payload[i];
+// }
+// return newState;

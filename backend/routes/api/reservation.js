@@ -15,8 +15,6 @@ router.post('', asyncHandler(async (req, res) => {
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const { id } = req.params;
-    let array = [];
-    console.log(id);
     const reservations = await ReservationDay.findAll({ where: { reserverId: id }, include: [{model: Venue}]})
     console.log(reservations);
     return res.json(reservations);

@@ -26,3 +26,10 @@
     bottom: 50px;
     right: 20px;
 }
+
+
+.errors {
+    color: red;
+    position: relative;
+    top: 10px;
+}

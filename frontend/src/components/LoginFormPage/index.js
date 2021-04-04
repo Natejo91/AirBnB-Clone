@@ -27,14 +27,14 @@ function LoginFormPage() {
     return (
         <div className='loginContainer'>
             <form onSubmit={handleSubmit} className='loginForm'>
-                <ul>
+                <ul className='errors'>
                 {errors.map((error, idx) => (
                 <li key={idx}>
                     {error}
                 </li>
                 ))}
-                <h2 id='loginTitle'>Log in</h2>
                 </ul>
+                <h2 id='loginTitle'>Log in</h2>
                 <label>
                     UserName or Email
                     <input

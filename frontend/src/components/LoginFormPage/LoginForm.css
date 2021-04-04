@@ -22,6 +22,12 @@
 
 #loginTitle {
     position: relative;
-    bottom: 50px;
-    right: 20px;
+    bottom: 70px;
+    right: 10px;
+}
+
+.errors {
+    color: red;
+    position: relative;
+    top: 50px;
 }

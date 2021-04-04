@@ -48,7 +48,7 @@ export const getReviews = (id) => async (dispatch) => {
 
 export const createReview = (review) => async (dispatch) => {
     const { userId, venueId, title, body, rating } = review;
-    const response = await csrfFetch('/api/reviews', {
+    const response = await csrfFetch(`/api/reviews`, {
         method: 'POST',
         body: JSON.stringify({
             userId,
@@ -86,25 +86,27 @@ const reviewReducer = (state = {}, action) => {
             });
             return allReviews;
         }
-        case SET_REVIEWS:
-            const reviews = action.reviews;
-            const newReview = {};
-
-            for(const review of reviews) {
-                newReview[review.id] = reviews
-            }
+        case SET_REVIEWS: {
+            const newReview = { ...state }
+            newReview[action.reviews.id] = action.reviews;
             return newReview;
-        case EDIT_REVIEWS:
+            // for(const review of reviews) {
+            //     newReview[review.id] = reviews
+            // }
+        }
+        case EDIT_REVIEWS: {
             const newState = { ...state };
             newState[action.review.id] = action.review;
             return newState;
-        case DELETE_REVIEWS:
+        }
+        case DELETE_REVIEWS: {
             const updatedState = { ...state };
             delete updatedState[action.reviewId];
             return updatedState;
+        }
         default:
             return state;
-    }
+        }
 }
 
 export default reviewReducer;

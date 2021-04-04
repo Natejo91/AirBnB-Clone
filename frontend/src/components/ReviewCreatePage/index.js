@@ -20,12 +20,12 @@ function ReviewCreatePage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setValidationErrors([]);
+        // setValidationErrors([]);
         dispatch(createReview({title, body, rating, venueId, userId}))
-            .catch(async (res) => {
-                const data = await res.json();
-                if (data && data.errors) setValidationErrors(data.errors);
-            });
+            // .catch(async (res) => {
+            //     const data = await res.json();
+            //     if (data && data.errors) setValidationErrors(data.errors);
+            // });
         history.push('/');
     }
 

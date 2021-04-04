@@ -12,9 +12,8 @@ function Reviews() { //this is venueId
     const reviews = useSelector(state => state.review)
     const history = useHistory();
     const user = useSelector(state => state.session.user);
+
     console.log(reviews)
-
-
 
 
     // useEffect(() => {
@@ -44,6 +43,7 @@ function Reviews() { //this is venueId
             </>
         )
     }
+    if (!user) return null;
 
     return (
         <div className='reviews-container'>

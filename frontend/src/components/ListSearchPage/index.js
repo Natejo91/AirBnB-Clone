@@ -8,9 +8,11 @@ function ListSearchPage() {
     const venueSearch = useSelector(state => state.search);
     const history = useHistory();
     console.log(venueSearch, 'Venue City');
-    if (!venueSearch.length) {
+    if (venueSearch.length === 0) {
         history.push('/');
     }
+
+    if (!venueSearch) return null;
     return (
         <div id='venue-search-container'>
             <ul>

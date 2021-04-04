@@ -11,6 +11,7 @@ function ReviewCreatePage() {
     const venueId = id;
     const history = useHistory();
     const dispatch = useDispatch()
+    const [ username, setUsername ] = useState('');
     const [ title, setTitle ] = useState('');
     const [ body, setBody ] = useState('');
     const [ rating, setRating ] = useState('');

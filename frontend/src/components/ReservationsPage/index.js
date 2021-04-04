@@ -20,13 +20,14 @@ function ReservationsPage() {
 
     return (
         <div className='reservation'>
-            <ul>
+            <h2>Your Reservations</h2>
+            <ul className='reservation-list'>
                 {reservations.map((item, i) => (
 
-                    <li key={`li-${i}`}>
-                        <NavLink to={`/venues/${item.venueId}`} key={i}>
+                    <li key={`li-${i}`} className=''>
+                        <NavLink to={`/venues/${item.venueId}`} key={i} className='navlink'>
 
-                            {item.venueId}
+                            {item.concertDate}
                             {/* <img src={item.bookingImgUrl} alt='booking'/> */}
                         </NavLink>
                     </li>

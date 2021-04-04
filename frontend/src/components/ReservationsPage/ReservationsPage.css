@@ -1,6 +1,14 @@
 .reservation {
+    position: fixed;
+    top: 120px;
+    left: .1%;
     max-height: 100px;
     max-width: 100px;
     border-radius: 50%;
     color: white
+
+}
+
+.reservation-list {
+    padding: 15px;
 }

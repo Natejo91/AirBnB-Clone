@@ -6,6 +6,7 @@ const searchRouter = require('./search.js');
 const venuesRouter = require('./venues.js');
 const reviewsRouter = require('./review.js');
 const reservationsRouter = require('./reservation.js');
+const userReviewsRouter = require('./userReviews.js');
 
 router.use('/session', sessionRouter);
 
@@ -18,5 +19,7 @@ router.use('/venues', venuesRouter);
 router.use('/reservations', reservationsRouter);
 
 router.use('/reviews', reviewsRouter);
+
+router.use('/userReviews/', userReviewsRouter)
 
 module.exports = router;

@@ -12,6 +12,14 @@ router.get('/:id', asyncHandler(async (req, res) => {
     return res.json(reviews);
 }))
 
+// we need to figure this out for the query
+router.get("/", asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const userReviews = await Review.findAll({ where: { userId: id } })
+    console.log(userReviews);
+    return res.json(userReviews);
+  }))
+
 //need validation handler for this post route
 router.post('/', asyncHandler(async (req, res) => {
     const {

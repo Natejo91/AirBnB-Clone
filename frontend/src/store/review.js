@@ -46,6 +46,7 @@ export const getReviews = (id) => async (dispatch) => {
     }
 }
 
+
 export const createReview = (review) => async (dispatch) => {
     const { userId, venueId, title, body, rating } = review;
     const response = await csrfFetch(`/api/reviews`, {
@@ -90,9 +91,6 @@ const reviewReducer = (state = {}, action) => {
             const newReview = { ...state }
             newReview[action.reviews.id] = action.reviews;
             return newReview;
-            // for(const review of reviews) {
-            //     newReview[review.id] = reviews
-            // }
         }
         case EDIT_REVIEWS: {
             const newState = { ...state };

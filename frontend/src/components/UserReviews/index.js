@@ -1,34 +1,32 @@
-import './ReservationsPage.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getReservation} from '../../store/reservation';
-import { useSelector } from 'react-redux';
+import { getUserReviews } from '../../store/userReviews'
 import { NavLink } from 'react-router-dom';
+import './UserReviews.css';
 
-function ReservationsPage() {
+function UserReviews() {
     const dispatch = useDispatch();
     const state = useSelector(state => state.session.user.id)
-    useEffect(() => {
-        dispatch(getReservation(state))
-    }, [dispatch, state])
 
-    const reservationObjects = useSelector(state => state.reservation);
+    useEffect(() => {
+        dispatch(getUserReviews(state));
+    }, [dispatch, state])
+    const userReviews = useSelector(state => state.userReview);
 
     if (!state) return null;
-    if (!reservationObjects) return null;
+    if (!userReviews) return null;
 
-    const reservations = Object.values(reservationObjects);
+    const reservations = Object.values(userReviews);
     console.log(reservations);
     return (
-        <div className='reservation'>
-            <h2>Upcoming Concerts</h2>
-            <ul className='reservation-list'>
+        <div className='reviews'>
+            <h2>Your Reviews</h2>
+            <ul className='reviews-list'>
                 {reservations.map((item, i) => (
 
                     <li key={`li-${i}`}>
                         <NavLink to={`/venues/${item.venueId}`} key={i} className='navlink'>
-
-                            {item.concertDate}
+                            {item.title}
                             {/* <img src={item.bookingImgUrl} alt='booking'/> */}
                         </NavLink>
                     </li>
@@ -38,4 +36,4 @@ function ReservationsPage() {
     )
 }
 
-export default ReservationsPage;
+export default UserReviews;

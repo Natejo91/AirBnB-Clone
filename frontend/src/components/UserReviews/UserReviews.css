@@ -1,0 +1,14 @@
+.reviews {
+    position: fixed;
+    top: 300px;
+    left: .1%;
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 50%;
+    color: white;
+    max-height: 100px;
+}
+
+.reviews-list {
+    padding: 15px;
+}

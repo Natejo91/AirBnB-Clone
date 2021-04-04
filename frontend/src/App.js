@@ -9,6 +9,7 @@ import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import ReviewCreatePage from './components/ReviewCreatePage';
 import VenueIdPage from './components/VenueIdPage';
+import HomePage from './components/HomePage';
 import './index.css';
 import stage from './images/airstagehome2.jpg';
 
@@ -24,6 +25,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
         {isLoaded && (
           <Switch>
+            <Route exact path='/'>
+              <HomePage />
+            </Route>
             <Route path='/login'>
               <LoginFormPage />
             </Route>

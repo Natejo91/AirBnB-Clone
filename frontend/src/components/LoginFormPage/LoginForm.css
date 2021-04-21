@@ -35,6 +35,6 @@
 .demo-login {
     position: relative;
     top: 450px;
-    left: 920px;
+    left: 240%;
     z-index: 200;
 }
